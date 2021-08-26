@@ -1,0 +1,5 @@
+x = int(input())
+v = str(x)
+y = "".join(reversed(v))
+print(v == y)
+print("thanks")
