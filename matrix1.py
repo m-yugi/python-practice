@@ -1,0 +1,48 @@
+innum=input()
+num=int(innum)
+l=list(map(int,input().split(",")))
+res=[]
+start=1
+end=1
+char=""
+temp=""
+s=input()
+innum+=innum
+for i in s:
+    if(str(start)+str(end)==innum):
+        break
+    if(i=='N'):
+        if(end-1>=1):
+            end-=1
+            temp+=str(end)
+            temp+=str(start)
+            res.append(int(temp))
+            temp=""
+    elif(i=='E'):
+        if(start+1<=num):
+            temp+=str(end)
+            temp+=str(start+1)
+            if int(temp) not in l:
+                start+=1
+                res.append(int(temp))
+            temp=""
+    elif(i=='S'):
+        if(end+1<=num):
+            temp+=str(end+1)
+            temp+=str(start)
+            if(int(temp) not in l):
+                end+=1
+                res.append(int(temp))
+            temp=""
+    elif(i=='W'):
+        if(start-1>=1):
+            start-=1
+            temp+=str(end)
+            temp+=str(start)
+            res.append(int(temp))
+            temp=""
+if(str(start)+str(end)==innum):
+    if(res):
+        print(res)
+else:
+    print(-1)
