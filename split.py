@@ -1,0 +1,12 @@
+n=input()
+d=0
+i=1
+l=[]
+while(i<len(n)):
+    if(n[i]==n[d]):
+        i+=1
+    else:
+        l.append(n[d:i])
+        d=i
+l.append(n[d:i])
+print(l)
